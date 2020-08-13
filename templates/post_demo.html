@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Demo Page</title>
+</head>
+<body>
+    <form  method="POST">
+        {% csrf_token %}
+        <label for="Name">Name</label>
+        User : <input type="text" name="Name" id="Name">
+        <input type="submit" value="Valo_to">
+    </form>
+</body>
+</html>
