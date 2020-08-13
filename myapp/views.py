@@ -56,9 +56,15 @@ def multi(request):
 from django.core.files.storage import FileSystemStorage
 
 def img(request):
+    return render(request,"img.html")
+
+def img_dis(request):
+    file_url= False
     if request.method=="POST" and request.FILES:
         image=request.FILES['Souvik']
+        print(image)
         fs=FileSystemStorage()
-        fs.save(image.name,image)
+        file=fs.save(image.name,image)
+        file_url=fs.url(file)
                 
-    return render(request,"img.html")
+    return render(request,"img_display.html",context={'file_url':file_url})
