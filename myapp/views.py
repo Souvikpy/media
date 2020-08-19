@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.mail import send_mail
+from myapp.utilities import store_Image
 # Create your views here.
 
 def base(request):
@@ -41,7 +42,7 @@ def register(request):
         else:
             gender="Male"
         send_mail("Thanks For Registration","hello Mr./Ms.{} {}\n Thanks for Registering".format(first_name,last_name),
-        "bhattacharjeesumon93@gmail.com",[email,],fail_silently=True)
+        "sumon.bhattacharjee93@gmail.com",[email,],fail_silently=True)
         return HttpResponse("{}<br>{}<br>{}<br>{}<br>{}<br>{}<br>{}<br>{}<br>{}<br>".format(first_name,last_name,email,password,phno,gender,date,month,year))
     return render(request,"myapp/registration.html")
 
@@ -68,3 +69,8 @@ def img_dis(request):
         file_url=fs.url(file)
                 
     return render(request,"img_display.html",context={'file_url':file_url})
+
+from myapp import forms
+def builtin(request):
+    form=forms.SampleForm()
+    return render(request,"builtin.html",{'form':form})

@@ -133,6 +133,6 @@ MEDIA_ROOT=MEDIA_DIR
 
 EMAIL_HOST="smtp.gmail.com"
 EMAIL_PORT=465
-EMAIL_HOST_USER="bhattacharjeesumon93@gmail.com"
-EMAIL_HOST_PASSWORD="SOU#vik.695"
+EMAIL_HOST_USER="sumon.bhattacharjee93@gmail.com"
+EMAIL_HOST_PASSWORD="SOU#vik.553"
 EMAIL_USE_SSL=True
